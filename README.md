@@ -1,3 +1,5 @@
+[![fr](https://img.shields.io/badge/lang-fr--fr-blue.svg)](https://github.com/Sirnyght/calendAMU/blob/master/README.fr-FR.md)   
+
 # CalendAMU
 ## Table of contents
 * [General info](#general-info)
