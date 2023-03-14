@@ -1,21 +1,22 @@
-<!-- Generate a Readme -->
 # CalendAMU
 ## Table of contents
 * [General info](#general-info)
 * [Description](#description)
 * [Installation](#installation)
-* [Usage](#usage)
+* [Support](#support)
+* [Contributing](#contributing)
 * [Authors and acknowledgment](#authors-and-acknowledgment)
 * [License](#license)
 
+## General info
+This project is a school project for the React course at Aix Marseille Université.
+
 ## Description
-CalendAMU is a small React school project of an online agenda. It allows you to create events, modify them and delete them. It is possible to filter events by category and by date. It is also possible to see the events weekly or monthly.
+CalendAMU is a small React school project of an online agenda. It allows you to see events from a Json file. It is possible to filter events by tags (on planning view) and by date. It is also possible to see the events in a planning view or in a monthly (calendar) view.
 
 ## Installation
 Clone the repository and install the dependencies with the command `npm install`.
-
-## Usage
-To start the project, use the command `npm start`.
+Then, launch the project with the command `npm start`.
 
 ## Support
 Raise an issue on the repository if you have any problem. I'll try to answer as soon as possible.

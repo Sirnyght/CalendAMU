@@ -1,38 +1,342 @@
-.App {
+.app {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
+.app-logo {
+  height: calc(10px + 5vmin);
   pointer-events: none;
+  margin: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* @media (prefers-reduced-motion: no-preference) {
+  .app-logo {
+    animation: app-logo-spin infinite 20s linear;
   }
-}
+} */
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app-header {
+  /* background-color: #282c34; */
+  background-color: #e8e8e8;
+  /* min-height: 100vh; */
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: left;
+  
+  /* color: white; */
+  color: #222;
+  /* Bottom border darker gray and 2 px */
+  border-bottom: 2px solid #DDD;
 }
 
-.App-link {
+.app-header-title {
+  font-size: calc(10px + 2vmin);
+  font-weight: lighter;
+}
+
+.app-header-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 80vmin;
+}
+
+.app-header-content-day {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-weight: lighter;
+  width: 18vmin;
+  flex-wrap: nowrap;
+}
+
+
+.app-header-content-month {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-weight: lighter;
+  width:13vmin;
+}
+
+.app-header-content-year {
+  font-weight: lighter;
+}
+
+.app-header-view {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  align-items: center;
+  width: 60vmin;
+}
+
+.app-header-view-toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.app-header-view-toggle-checkbox {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.app-header-view-toggle-slider-round {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #55a467;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.app-header-view-toggle-slider-round:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #FFF;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+.app-header-view-toggle-checkbox:checked + .app-header-view-toggle-slider-round {
+  background-color: #2196F3;
+} 
+
+.app-header-view-toggle-checkbox:focus + .app-header-view-toggle-slider-round {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+.app-header-view-toggle-checkbox:checked + .app-header-view-toggle-slider-round:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.app-link {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
+.nav-button {
+  /* no background color */
+  background-color: transparent;
+  /* no border */
+  border: none;
+  /* button is round */
+  border-radius: 50%;
+  /* Padding */
+  padding: 1vmin;
+  /* Margin */
+  margin: 0 1vmin;
+}
+
+.nav-button:hover {
+  background-color: rgba(128, 128, 128, 0.2);
+}
+
+.nav-button:active {
+  background-color: rgba(128, 128, 128, 0.4);
+}
+
+@keyframes app-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
   }
+}
+
+.app-main {
+  height: 90vmin;
+}
+
+.app-calendar {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  /* padding: 0 10px; */
+}
+
+.app-calendar-header-weekdays {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-size: 2vmin;
+}
+
+.app-calendar-header-weekdays-item {
+  display: flex;
+  justify-content: center;
+  /* Get page width and divide by 7 */
+  width: calc(100% / 7);
+  margin: 0;
+  padding: 0 10px;
+  border: 0.1px solid #222;
+}
+
+.app-calendar-body {
+  display: flex;
+  flex-direction: column;
+  /* padding: 0 10px; */
+}
+
+.app-calendar-body-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /* padding: 0 10px; */
+}
+
+.app-calendar-case {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  /* align-items: center; */
+  /* Height and width scale according to window size */
+  width: calc(100% / 7);
+  height: 15vmin;
+  overflow: hidden;
+  padding: 0 10px; 
+  border: 0.1px solid #222;
+  /* border-radius: 5px; */
+  /* margin: 5px; */
+  background-color: #FFF;
+}
+
+.app-calendar-case-empty {
+  /* display: none; */
+  border: 0.1px solid #222;
+}
+
+.app-calendar-case:hover {
+  background-color: #EEE;
+}
+
+.app-calendar-case-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: flex-start;
+  font-size: 2vmin;
+  margin: 1vmin 0 0 0;
+}
+
+.app-calendar-case-current-day {
+  color: #e13f3f;
+}
+
+.app-calendar-case-events-list {
+  display: flex;
+  flex-direction: column;
+  padding:0;
+  font-size: 1.5vmin;
+  white-space: nowrap;
+  list-style-type: none;
+
+}
+
+.app-calendar-case-events-list-item {
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* .app-calendar-case-events-list-item-title {
+  margin: 1vmin 0 1vmin 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+} */
+
+.app-planning {
+  display: flex;
+  flex-direction: row;
+}
+
+.app-planning-taglist {
+  /* This is a list of tags set to the left of the page */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  /* Floating */
+  position: fixed;
+
+  /* Get page width and divide by 7 */
+  width: 30vmin;
+  height: 100%;
+  background-color: #FFF;
+}
+
+.app-planning-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  /* Get page width and divide by 7 */
+  margin: 0 0 0 30vmin;
+  width: 100%;
+  height: 100%;
+  background-color: #FFF;
+}
+
+.app-event {
+  /* Float at center of screen */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* Set width and height */
+  width: 50vmin;
+  height: 50vmin;
+  /* Set background color */
+  background-color: #FFF;   
+  /* Set border */
+  border: 1px solid #222;
+  /* Set border radius */
+  border-radius: 5px;
+  /* Set padding */
+  padding: 1vmin;
+  /* Set z-index */
+  z-index: 1;
+  /* set overflow */
+  overflow: auto;
+}
+
+.app-calendar-eventslist {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* Set width and height */
+  width: 50vmin;
+  height: 80vmin;
+  /* Set background color */
+  background-color: #FFF;   
+  /* Set border */
+  border: 1px solid #222;
+  /* Set border radius */
+  border-radius: 5px;
+  /* Set padding */
+  padding: 1vmin;
+  /* Set z-index */
+  z-index: 1;
+  /* set overflow */
+  overflow: auto;
 }
